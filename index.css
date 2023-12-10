@@ -5,18 +5,19 @@ body {
     height: 100vh;
     width: 100vw;
     font-family: 'Montserrat', sans-serif;
+    position: relative;
 }
 
 p {
     margin: 0px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
-/* Set size of fixed header */
+/* Set fixed header */
 
 header {
     width: 100vw;
-    height: 20vh;
+    height: 17vh;
     position: fixed;
 }
 
@@ -36,14 +37,14 @@ header {
     align-items: center;
     justify-content: flex-start;
     width: 70vw;
-    height: 8vh;
+    height: 7vh;
     padding-left: 20px;
     border: 1px solid rgb(227, 226, 226);
     border-radius: 50px;
-    box-shadow: 0px -25px 20px -32px rgba(0,0,0,0.45),
-                25px 0px 20px -28px rgba(0,0,0,0.45),
-                0px 25px 20px -32px rgba(0,0,0,0.45),
-                -25px 0px 20px -28px rgba(0,0,0,0.45);
+    box-shadow: 0px -25px 20px -27px rgba(0,0,0,0.45),
+                25px 0px 20px -24px rgba(0,0,0,0.45),
+                0px 25px 20px -26px rgba(0,0,0,0.45),
+                -25px 0px 20px -24px rgba(0,0,0,0.45);
 }
 
 .searchbar--icon {
@@ -94,12 +95,81 @@ header {
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .slider--images {
-    height: 35%;
-    width: 35%;
+    height: 3.5vh;
+    width: 3.5vh;
+}
+
+/* Set fixed options container */
+
+.options {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 18vh;
+}
+
+/* Styled options banner and map button */
+
+.options--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.options--button {
+    margin-top: 12px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    width: 11vh;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options--button p {
+    margin-right: 5px;
+}
+
+.options--button svg {
+    margin-left: 5px;
+}
+
+.options--banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    width: 100%;
+    height: 50%;
+    border-top: 1px solid rgb(227, 226, 226);
+    box-shadow: 0px -25px 20px -35px rgba(0,0,0,0.45);
+}
+
+.options--option {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 20px;
+}
+
+.options--option p {
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+.options--images {
+    height: 3.2vh;
+    width: 3.2vh;
 }
 
 /* */
