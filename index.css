@@ -279,3 +279,40 @@ header {
 .footer--country--item {
     margin-right: 16px;
 }
+
+/*Set main component and styled "Show more" button/section */
+
+main {
+    width: 100vw;
+}
+
+.more--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55px;
+    margin-bottom: 30px;
+}
+
+.more--title {
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-weight: 900;
+}
+
+.more--button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: black;
+    margin-top: 15px;
+    padding: 13px 23px;
+}
+
+.more--button p {
+    color: white;
+    font-size: 14px;
+    letter-spacing: -1px;
+    font-weight: 900;
+}
