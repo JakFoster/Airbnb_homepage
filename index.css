@@ -1,29 +1,98 @@
-/* Changed default styling and set global font */
+/*     
+         Airbnb Homepage Stylesheet
+
+
+        **** TABLE OF CONTENTS ****
+
+            SECTION 1. Default/global styles and component layout
+            SECTION 2. Fixed Navbar styling
+            SECTION 3. Location component styling
+            SECTION 4. Show more section styling
+            SECTION 5. References styling
+            SECTION 6. Fixed Options bar styling
+
+*/
+
+
+
+
+
+/**** SECTION 1 ---> Default/global styles and component layout ****/
+
+
+
+
+
+/* Reset default styling and set global google font */
 
 body {
     margin: 0 auto;
     height: 100vh;
     width: 100vw;
     font-family: 'Montserrat', sans-serif;
-    position: relative;
 }
 
 p {
     margin: 0px;
-    font-size: 12px;
 }
 
-/* Set fixed header */
+/* Set fixed header at the top of the site */
 
-header {
+.navbar {
+    position: absolute;
     width: 100vw;
-    height: 17vh;
-    position: sticky;
+    height: 135px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+}
+
+/* Set fixed main component */
+
+.content {
+    position: absolute; 
+    top: 135px; 
+    bottom: 70px;
+    left: 0px; 
+    right: 0px; 
+    overflow: auto;
+}
+
+/* Set fixed options component at the bottom of the site */
+
+.options {
+    position: absolute; 
+    width: 100vw;
+    height: 140px;
+    bottom: 0px; 
+    left: 0px; 
+    right: 0px; 
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+/**** SECTION 2 ---> Fixed Navbar styling****/
+
+
+
+
+
+.navbar p {
+    font-size: 12px;
 }
 
 /* Styling for the searchbar section of the header */
 
-.searchbar {
+.navbar__searchbar {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -32,12 +101,14 @@ header {
     margin: 0.5vh 0px;
 }
 
-.searchbar--input {
+/* Input field */
+
+.navbar__input {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     width: 70vw;
-    height: 7vh;
+    height: 56px;
     padding-left: 20px;
     border: 1px solid rgb(227, 226, 226);
     border-radius: 50px;
@@ -47,82 +118,351 @@ header {
                 -25px 0px 20px -24px rgba(0,0,0,0.45);
 }
 
-.searchbar--icon {
-    height: 2.5vh;
-    width: 2.5vh;
+.navbar__magnify {
+    height: 20px;
+    width: 20px;
 }
 
-.searchbar--text {
+.navbar__placeholder {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
     height: 80%;
     margin-left: 20px;
-}
+} 
 
-.searchbar--filter--button {
+/* Filter button */
+
+.navbar__button {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     border: 1px solid rgb(144, 144, 144);
     border-radius: 50%;
-    width: 5vh;
-    height: 5vh;
+    width: 40px;
+    height: 40px;
     margin-right: 3vh;
 }
 
-.searchbar--filter--icon {
-    height: 2.5vh;
-    width: 2.5vh;
+.navbar__filter {
+    height: 20px;
+    width: 20px;
 }
 
-/* Styling for the slider section of the header */
+/* Styling for the horizontal slider section of the navbar */
 
-.slider {
+.navbar__slider {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     height: 50%;
+    width: 100%;
     border-bottom: 1px solid rgb(227, 226, 226);
     box-shadow: 0px 25px 20px -35px rgba(0,0,0,0.45);
+    overflow-x: scroll;
 }
 
-.slider--boxes {
+.navbar__boxes {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 16px;
     opacity: 0.7;
+    margin: 0px 20px;
 }
 
-.slider--images {
-    height: 3.5vh;
-    width: 3.5vh;
+.navbar__images {
+    height: 28px;
+    width: 28px;
 }
 
-/* Set fixed options container */
 
-.options {
-    position: sticky;
+
+
+
+/**** SECTION 3 ---> Location component styling ****/
+
+
+
+
+
+/* Flexbox wrapper for all location components */
+
+.content__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100vw;
-    height: 18vh;
+    padding: 10px;
 }
 
-/* Styled options banner and map button */
+/* Individual location card container div */
 
-.options--container {
+.content__location {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+/* Location main image and heart button styling */
+
+.content__location img {
+    height: 280px;
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.content__location .content__heart {
+    position: absolute;
+    margin-left: 255px;
+    margin-top: 10px;
+    /* Probably a better way to position the heart */
+}
+
+.content__location .content__heart path {
+    fill: rgb(61, 61, 61);
+    stroke: #ffffff;
+    stroke-width: 2px;
+    stroke-linejoin: round;
+}
+
+/* Location card text styling */
+
+.content__location p {
+    font-size: 15px;
+}
+
+.content__info p {
+    margin-bottom: 4px;
+}
+
+/* Location title styling */
+
+.content__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content__title p {
+    font-weight: 900;
+}
+
+/* Rating and star image styling */
+
+.content__rating {
+    display: flex;
+    align-items: baseline;
+}
+
+.content__rating p {
+    margin-left: 5px;
+}
+
+/* Price styling */
+
+.content__price {
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+.content__price p:hover {
+    text-decoration: none;
+}
+
+
+
+/**** SECTION 4 ---> Show more section styling ****/
+
+
+
+
+
+/* Show more component flexbox wrapper */
+
+.content__more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55px;
+    margin-bottom: 30px;
+}
+
+/* Text styling */
+
+.content__more p {
+    letter-spacing: -1px;
+    font-weight: 900;
+}
+
+.content__more__title {
+    font-size: 18px;
+}
+
+/* Button and btton text styling */
+
+.content__more__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: black;
+    margin-top: 15px;
+    padding: 13px 23px;
+}
+
+.content__more__button p {
+    color: white;
+    font-size: 14px;
+}
+
+
+
+
+
+/**** SECTION 5 ---> References styling ****/
+
+
+
+
+
+/* Flexbox wrapper for the references section */
+
+.content__references {
+    background-color: rgb(246, 246, 246);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px 25px;
+}
+
+/* Wrapper for inspiration section */
+
+.content__inspirations {
+    width: 100%;
+    padding-bottom: 18px;
+    border-bottom: 2px solid rgb(212, 212, 212);
+    box-shadow: 0px 25px 20px -40px rgba(0,0,0,0.45);
+}
+
+/* Inspirations title and location type sliding choices */
+
+.content__inspirations__title {
+    font-size: 22px;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.content__choices {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.content__choices p {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-right: 20px;
+    text-wrap: nowrap;
+}
+
+/* Wrapper for both destination columns */
+
+.content__destinations {
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    box-shadow: 0px 25px 20px -40px rgba(0,0,0,0.45);
+}
+
+/* Wrapper for individual destination column */ 
+
+.content__column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
-.options--button {
+/* Text wrapper and styling */
+
+.content__link {
+    margin: 30px 85px 0px 0px;
+}
+
+.content__link p {
+    font-size: 14px;
+    letter-spacing: -1px;
+    color: rgb(48, 48, 48);
+}
+
+/* Styled three sections - Support, Hosting and Airbnb */
+
+.content__box {
+    width: 100vw;
+    padding-top: 12px;
+    padding-bottom: 27px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    box-shadow: 0px 25px 20px -40px rgba(0,0,0,0.45);
+}
+
+.content__box p {
+    margin-top: 15px;
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+
+/* Legal section wrapper */
+
+.content__legal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Wrapper for country and currency */
+
+.content__country {
+    display: flex;
+    padding: 27px 0px 12px 0px;
+}
+
+/* Text styling */
+
+.content__legal p {
+    margin-bottom: 15px;
+    font-size: 13px;
+    
+}
+
+.content__language {
+    margin-right: 16px;
+}
+
+/* Globe image styling */
+
+.content__country svg {
+    margin-right: 8px;
+}
+
+
+
+
+
+/**** SECTION 6 ---> Fixed Options bar styling ****/
+
+
+
+
+
+/* Styled map button */
+
+.options__button {
     margin-top: 12px;
     border-radius: 50px;
     background-color: black;
@@ -134,15 +474,22 @@ header {
     align-items: center;
 }
 
-.options--button p {
+/* Map button text */
+
+.options__button p {
     margin-right: 5px;
+    font-size: 12px;
 }
 
-.options--button svg {
+/* Map button image */
+
+.options__button svg {
     margin-left: 5px;
 }
 
-.options--banner {
+/* Options wrapper div */
+
+.options__banner {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,7 +500,9 @@ header {
     box-shadow: 0px -25px 20px -35px rgba(0,0,0,0.45);
 }
 
-.options--option {
+/* Individual option wrapper */
+
+.options__option {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -161,226 +510,16 @@ header {
     margin: 0px 20px;
 }
 
-.options--option p {
+/* Option text and image styling */
+
+.options__option p {
     margin-top: 5px;
     font-size: 10px;
 }
 
-.options--images {
-    height: 3.2vh;
-    width: 3.2vh;
+.options__images {
+    height: 25px;
+    width: 25px;
 }
 
-/*Set footer component */
-
-.footer--container {
-    background-color: rgb(246, 246, 246);
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 50px 25px;
-}
-
-/*Styled inspiration section */
-
-.footer--inspirations {
-    width: 100%;
-    padding-bottom: 18px;
-    border-bottom: 2px solid rgb(212, 212, 212);
-    box-shadow: 0px 25px 20px -40px rgba(0,0,0,0.45);
-}
-
-.footer--title {
-    font-size: 22px;
-    margin-bottom: 25px;
-    letter-spacing: -1px;
-}
-
-.footer--choices {
-    display: flex;
-    justify-content: space-between;
-    opacity: 0.8;
-}
-
-.footer--choices p {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -1px;
-}
-
-/* Styled destination section */
-
-.footer--destinations {
-    display: flex;
-    justify-content: flex-start;
-    width: 100vw;
-    padding-bottom: 50px;
-    border-bottom: 1px solid rgb(212, 212, 212);
-    box-shadow: 0px 25px 20px -40px rgba(0,0,0,0.45);
-}
-
-.footer--destinations--column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.footer--destinations--column p {
-    font-size: 14px;
-    letter-spacing: -1px;
-    color: rgb(48, 48, 48);
-}
-
-.footer--destinations--link {
-    margin: 30px 85px 0px 0px;
-}
-
-/* Styled support, hosting and Airbnb sections*/
-
-.footer--box {
-    width: 100vw;
-    padding-top: 12px;
-    padding-bottom: 27px;
-    border-bottom: 1px solid rgb(212, 212, 212);
-    box-shadow: 0px 25px 20px -40px rgba(0,0,0,0.45);
-}
-
-.footer--box p {
-    margin-top: 15px;
-    font-size: 14px;
-    letter-spacing: -1px;
-}
-
-/* Styled info/legal/license section*/
-
-.footer--info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.footer--info p {
-    margin-bottom: 15px;
-    font-size: 13px;
-    
-}
-
-.footer--country {
-    display: flex;
-    padding: 27px 0px 12px 0px;
-}
-
-.footer--country svg {
-    margin-right: 8px;
-}
-
-.footer--country--item {
-    margin-right: 16px;
-}
-
-/*Set main component and styled "Show more" button/section */
-
-main {
-    width: 100vw;
-}
-
-.more--container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 55px;
-    margin-bottom: 30px;
-}
-
-.more--title {
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-weight: 900;
-}
-
-.more--button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 7px;
-    background-color: black;
-    margin-top: 15px;
-    padding: 13px 23px;
-}
-
-.more--button p {
-    color: white;
-    font-size: 14px;
-    letter-spacing: -1px;
-    font-weight: 900;
-}
-
-/* Location component */
-
-.location--container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100vw;
-    padding: 10px;
-}
-
-.location {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-}
-
-.location p {
-    font-size: 15px;
-}
-
-.location img {
-    height: 280px;
-    width: 300px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.location .heart {
-    position: absolute;
-    margin-left: 255px;
-    margin-top: 10px;
-}
-
-.location .heart path {
-    fill: rgb(61, 61, 61);
-    stroke: #ffffff;
-    stroke-width: 2px;
-    stroke-linejoin: round;
-}
-
-.location--title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.location--title p {
-    font-weight: 900;
-}
-
-.location--rating {
-    display: flex;
-    align-items: baseline;
-}
-
-.location--rating p {
-    margin-left: 5px;
-}
-
-.location--price {
-    text-decoration: underline;
-    margin-top: 10px;
-}
-
-.location--info p {
-    margin-bottom: 4px;
-}
+/* */
